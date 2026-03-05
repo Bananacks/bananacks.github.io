@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bananacks Pvt Ltd — Premium Fresh Banana Exporters from India</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #D4A017;
+    --deep-green: #1A3A2A;
+    --leaf: #2D6A4F;
+    --light-gold: #F5E6B8;
+    --cream: #FDFAF3;
+    --dark: #0F1F17;
+    --text: #2C3E2D;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(15, 31, 23, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 18px 60px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid rgba(212, 160, 23, 0.2);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .nav-logo span { color: white; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--dark) !important;
+    padding: 10px 24px;
+    border-radius: 2px;
+    font-weight: 600 !important;
+  }
+  .nav-cta:hover { background: #c49012; color: var(--dark) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--dark);
+    position: relative;
+    display: flex; align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 70% 50%, rgba(45, 106, 79, 0.35) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(212, 160, 23, 0.12) 0%, transparent 60%),
+      linear-gradient(135deg, #0F1F17 0%, #1A3A2A 100%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(212,160,23,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,160,23,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 140px 60px 100px;
+    max-width: 700px;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(212, 160, 23, 0.15);
+    border: 1px solid rgba(212, 160, 23, 0.3);
+    color: var(--gold);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-tag::before { content: '●'; font-size: 0.5rem; }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 900;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  h1 em { color: var(--gold); font-style: normal; }
+  .hero-sub {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.75;
+    max-width: 520px;
+    margin-bottom: 48px;
+    font-weight: 300;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-actions {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+    padding: 16px 36px;
+    border: none;
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .btn-primary:hover { background: #c49012; transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 16px 36px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    position: absolute; bottom: 60px; right: 60px;
+    display: flex; gap: 48px;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+  .stat { text-align: right; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    display: block;
+  }
+  .stat-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* MARQUEE */
+  .marquee-wrap {
+    background: var(--gold);
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-inner {
+    display: inline-block;
+    animation: marquee 25s linear infinite;
+  }
+  .marquee-inner span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin: 0 40px;
+  }
+  .marquee-inner span::before { content: '✦  '; }
+
+  /* SECTIONS */
+  section { padding: 100px 60px; }
+
+  .section-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--leaf);
+    margin-bottom: 16px;
+    display: block;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    color: var(--deep-green);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  h2 em { color: var(--gold); font-style: normal; }
+
+  /* WHY US */
+  .why-us { background: white; }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .why-text p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #4a5a4b;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+  .why-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .why-card {
+    background: var(--cream);
+    border: 1px solid rgba(45, 106, 79, 0.1);
+    border-radius: 4px;
+    padding: 28px 24px;
+    transition: all 0.2s;
+  }
+  .why-card:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+  .why-card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .why-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--deep-green);
+    margin-bottom: 6px;
+  }
+  .why-card p { font-size: 0.85rem; color: #7a8a7b; line-height: 1.6; }
+
+  /* PRODUCT */
+  .product { background: var(--deep-green); position: relative; overflow: hidden; }
+  .product::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(212,160,23,0.08), transparent 70%);
+    border-radius: 50%;
+  }
+  .product .section-tag { color: var(--gold); }
+  .product h2 { color: white; }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 60px auto 0;
+  }
+  .product-card {
+    border: 1px solid rgba(212, 160, 23, 0.2);
+    border-radius: 4px;
+    padding: 40px 32px;
+    position: relative;
+    transition: all 0.3s;
+    background: rgba(255,255,255,0.03);
+  }
+  .product-card:hover {
+    border-color: var(--gold);
+    background: rgba(212, 160, 23, 0.05);
+    transform: translateY(-4px);
+  }
+  .product-card.featured {
+    border-color: var(--gold);
+    background: rgba(212, 160, 23, 0.08);
+  }
+  .featured-badge {
+    position: absolute; top: -12px; left: 32px;
+    background: var(--gold);
+    color: var(--dark);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .product-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: white;
+    margin-bottom: 12px;
+  }
+  .product-card p { font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 24px; }
+  .product-specs { list-style: none; }
+  .product-specs li {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.6);
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex; justify-content: space-between;
+  }
+  .product-specs li:last-child { border: none; }
+  .product-specs li strong { color: var(--gold); }
+
+  /* MARKETS */
+  .markets { background: var(--cream); }
+  .markets-inner { max-width: 1200px; margin: 0 auto; }
+  .markets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+  }
+  .market-card {
+    border-radius: 4px;
+    padding: 40px 32px;
+    border: 1px solid rgba(45, 106, 79, 0.12);
+    transition: all 0.2s;
+    background: white;
+  }
+  .market-card:hover { box-shadow: 0 12px 36px rgba(0,0,0,0.08); transform: translateY(-3px); }
+  .market-flag { font-size: 2.5rem; margin-bottom: 16px; display: block; }
+  .market-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--deep-green);
+    margin-bottom: 8px;
+  }
+  .market-status {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+  .status-active { background: rgba(45, 106, 79, 0.12); color: var(--leaf); }
+  .status-expanding { background: rgba(212, 160, 23, 0.12); color: #9a7010; }
+  .market-card p { font-size: 0.88rem; color: #6a7a6b; line-height: 1.7; }
+
+  /* PROCESS */
+  .process { background: white; }
+  .process-inner { max-width: 900px; margin: 60px auto 0; }
+  .process-step {
+    display: flex; gap: 32px; align-items: flex-start;
+    margin-bottom: 48px;
+    position: relative;
+  }
+  .process-step::after {
+    content: '';
+    position: absolute;
+    left: 23px; top: 52px;
+    width: 2px; height: calc(100% - 10px);
+    background: linear-gradient(to bottom, var(--leaf), transparent);
+  }
+  .process-step:last-child::after { display: none; }
+  .step-num {
+    width: 48px; height: 48px;
+    background: var(--deep-green);
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    position: relative; z-index: 1;
+  }
+  .step-body h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--deep-green);
+    margin-bottom: 8px;
+  }
+  .step-body p { font-size: 0.9rem; color: #6a7a6b; line-height: 1.7; }
+
+  /* CONTACT */
+  .contact { background: var(--dark); position: relative; overflow: hidden; }
+  .contact::before {
+    content: '';
+    position: absolute; bottom: -150px; left: -150px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(45,106,79,0.2), transparent 70%);
+    border-radius: 50%;
+  }
+  .contact .section-tag { color: var(--gold); }
+  .contact h2 { color: white; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 60px auto 0;
+  }
+  .contact-info p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.85;
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+  .contact-detail {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 20px;
+  }
+  .contact-detail-icon {
+    width: 40px; height: 40px;
+    background: rgba(212, 160, 23, 0.1);
+    border: 1px solid rgba(212, 160, 23, 0.2);
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .contact-detail-text span {
+    display: block;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+  .contact-detail-text a, .contact-detail-text strong {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  .contact-detail-text a:hover { color: var(--gold); }
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 2px;
+    padding: 14px 16px;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+    outline: none;
+    resize: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--gold);
+  }
+  .form-group select option { background: var(--dark); }
+
+  /* FOOTER */
+  footer {
+    background: #0a1510;
+    padding: 40px 60px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(212, 160, 23, 0.1);
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .footer-logo span { color: rgba(255,255,255,0.4); }
+  footer p { font-size: 0.8rem; color: rgba(255,255,255,0.25); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    section { padding: 70px 24px; }
+    .hero-content { padding: 120px 24px 80px; }
+    .hero-stats { display: none; }
+    .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .product-grid, .markets-grid { grid-template-columns: 1fr; }
+    .why-cards { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Banana<span>cks</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#markets">Markets</a></li>
+    <li><a href="#process">How We Work</a></li>
+    <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">India's Finest Banana Exporters</div>
+    <h1>Premium Fresh<br>Bananas, Direct<br>from <em>India</em></h1>
+    <p class="hero-sub">Bananacks sources Grade A Cavendish bananas from India's finest growing belts and delivers them reliably to global markets — with full cold chain integrity from farm to port.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Request a Quote</a>
+      <a href="#products" class="btn-secondary">View Products</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">Grade A</span>
+      <span class="stat-label">Export Quality</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">$500<small style="font-size:1rem">/T</small></span>
+      <span class="stat-label">Starting FOB Price</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">3+</span>
+      <span class="stat-label">Export Markets</span>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span>Fresh Cavendish Bananas</span>
+    <span>Grand Naine Variety</span>
+    <span>Jalgaon, Maharashtra Origin</span>
+    <span>APEDA Registered</span>
+    <span>Cold Chain Certified</span>
+    <span>Russia & Middle East Markets</span>
+    <span>FOB & CIF Available</span>
+    <span>Fresh Cavendish Bananas</span>
+    <span>Grand Naine Variety</span>
+    <span>Jalgaon, Maharashtra Origin</span>
+    <span>APEDA Registered</span>
+    <span>Cold Chain Certified</span>
+    <span>Russia & Middle East Markets</span>
+    <span>FOB & CIF Available</span>
+  </div>
+</div>
+
+<!-- ABOUT / WHY US -->
+<section class="why-us" id="about">
+  <div class="why-grid">
+    <div class="why-text fade-in">
+      <span class="section-tag">About Bananacks</span>
+      <h2>Built for the<br><em>Global Market</em></h2>
+      <p>Bananacks Pvt Ltd is an Indian export company specialising in premium fresh bananas for international buyers. We source exclusively from the finest growing belts in Maharashtra and South India, ensuring consistent quality, sizing, and shelf life across every shipment.</p>
+      <p>Our focus is on building long-term relationships with importers in Russia, the Middle East, and the European Union — backed by reliable logistics, phytosanitary compliance, and competitive pricing.</p>
+      <a href="#contact" class="btn-primary" style="margin-top: 16px; display: inline-block;">Start a Conversation</a>
+    </div>
+    <div class="why-cards fade-in">
+      <div class="why-card">
+        <span class="why-card-icon">🌿</span>
+        <h4>Premium Sourcing</h4>
+        <p>Grand Naine Cavendish from Jalgaon & Andhra — India's export belt.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-card-icon">❄️</span>
+        <h4>Cold Chain Ready</h4>
+        <p>Pre-cooling, reefer containers & APEDA sea protocol compliance.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-card-icon">📋</span>
+        <h4>Full Compliance</h4>
+        <p>Phytosanitary, Certificate of Origin, IEC, APEDA registered.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-card-icon">🚢</span>
+        <h4>FOB & CIF Pricing</h4>
+        <p>Flexible trade terms tailored to your import requirements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="product" id="products">
+  <span class="section-tag" style="text-align:center; display:block">What We Export</span>
+  <h2 style="text-align:center; color:white">Our <em>Products</em></h2>
+  <div class="product-grid">
+    <div class="product-card featured fade-in">
+      <div class="featured-badge">Best Seller</div>
+      <h3>Grand Naine Cavendish</h3>
+      <p>India's premium export banana. Consistent size, excellent shelf life of 18–22 days, and the variety most preferred by Russian and Middle Eastern importers.</p>
+      <ul class="product-specs">
+        <li>Variety <strong>Grand Naine (Cavendish)</strong></li>
+        <li>Weight per finger <strong>120–200g</strong></li>
+        <li>Shelf Life <strong>18–22 days</strong></li>
+        <li>Packing <strong>13–14 kg/carton</strong></li>
+        <li>Colour at despatch <strong>Green Stage 1–2</strong></li>
+        <li>Origin <strong>Jalgaon, Maharashtra</strong></li>
+      </ul>
+    </div>
+    <div class="product-card fade-in">
+      <h3>Robusta Banana</h3>
+      <p>Hardy variety with a rich flavour profile, suited to longer transit routes. Ideal for buyers seeking a cost-effective alternative to Cavendish.</p>
+      <ul class="product-specs">
+        <li>Variety <strong>Robusta</strong></li>
+        <li>Weight per finger <strong>100–180g</strong></li>
+        <li>Shelf Life <strong>14–18 days</strong></li>
+        <li>Packing <strong>13 kg/carton</strong></li>
+        <li>Origin <strong>Andhra Pradesh / Tamil Nadu</strong></li>
+      </ul>
+    </div>
+    <div class="product-card fade-in">
+      <h3>Nendran Banana</h3>
+      <p>A uniquely Indian variety with a distinct taste and thick peel. Growing demand in specialty markets in the UAE, UK, and EU diaspora communities.</p>
+      <ul class="product-specs">
+        <li>Variety <strong>Nendran (Kerala)</strong></li>
+        <li>Weight per finger <strong>200–300g</strong></li>
+        <li>Shelf Life <strong>12–15 days</strong></li>
+        <li>Packing <strong>12 kg/carton</strong></li>
+        <li>Origin <strong>Kerala / Tamil Nadu</strong></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MARKETS -->
+<section class="markets" id="markets">
+  <div class="markets-inner">
+    <span class="section-tag fade-in">Where We Sell</span>
+    <h2 class="fade-in">Our Export <em>Markets</em></h2>
+    <div class="markets-grid">
+      <div class="market-card fade-in">
+        <span class="market-flag">🇷🇺</span>
+        <h3>Russia</h3>
+        <span class="market-status status-expanding">Actively Expanding</span>
+        <p>Russia imports over $779 million in bananas annually. With Ecuador's supply disrupted by geopolitical tensions, Indian exporters have a direct and growing opportunity. We target buyers in Moscow and St. Petersburg via sea freight through Vladivostok and St. Petersburg ports.</p>
+      </div>
+      <div class="market-card fade-in">
+        <span class="market-flag">🇦🇪</span>
+        <h3>Middle East</h3>
+        <span class="market-status status-active">Active Market</span>
+        <p>The UAE, Iraq, and Saudi Arabia collectively represent over 55% of India's banana export destinations. We have established trade routes and buyer relationships in this corridor, with shipments through Nhava Sheva port.</p>
+      </div>
+      <div class="market-card fade-in">
+        <span class="market-flag">🇪🇺</span>
+        <h3>European Union</h3>
+        <span class="market-status status-expanding">Opportunity Market</span>
+        <p>EU banana production is forecast to decline significantly in 2025, pushing wholesale prices up. With India-EU FTA negotiations in advanced stages, we are building relationships with importers in the Netherlands — Europe's banana gateway.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <span class="section-tag fade-in">How We Work</span>
+  <h2 class="fade-in">Farm to <em>Your Port</em></h2>
+  <div class="process-inner">
+    <div class="process-step fade-in">
+      <div class="step-num">01</div>
+      <div class="step-body">
+        <h4>Sourcing & Grading</h4>
+        <p>We source directly from certified farmer clusters in Jalgaon (Maharashtra) and Andhra Pradesh. Every batch is graded for size, weight, and colour to ensure only Grade A produce makes the cut.</p>
+      </div>
+    </div>
+    <div class="process-step fade-in">
+      <div class="step-num">02</div>
+      <div class="step-body">
+        <h4>Pack House & Pre-Cooling</h4>
+        <p>Bananas are de-handed, washed, treated, and packed in 13–14 kg export cartons at APEDA-approved pack houses. Pre-cooling to 13°C ensures fruit integrity throughout transit.</p>
+      </div>
+    </div>
+    <div class="process-step fade-in">
+      <div class="step-num">03</div>
+      <div class="step-body">
+        <h4>Documentation & Compliance</h4>
+        <p>We handle all export documentation including Phytosanitary Certificate, Certificate of Origin, Packing List, Commercial Invoice, and Bill of Lading. Full compliance with destination country import regulations.</p>
+      </div>
+    </div>
+    <div class="process-step fade-in">
+      <div class="step-num">04</div>
+      <div class="step-body">
+        <h4>Reefer Container Shipping</h4>
+        <p>Cargo is loaded into 40-foot reefer containers maintained at 13°C with controlled ethylene levels throughout the voyage. We follow APEDA's sea protocol for Russia shipments (18–25 day transit).</p>
+      </div>
+    </div>
+    <div class="process-step fade-in">
+      <div class="step-num">05</div>
+      <div class="step-body">
+        <h4>Delivery & After-Care</h4>
+        <p>We provide full shipment tracking and share all documents digitally. We remain available for any post-delivery queries and work towards long-term repeat contracts with all buyers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <span class="section-tag" style="display:block">Get In Touch</span>
+  <h2>Request a <em>Quote</em></h2>
+  <div class="contact-grid">
+    <div class="contact-info fade-in">
+      <p>We welcome enquiries from importers, distributors, and wholesalers worldwide. Whether you're looking for a trial shipment or a long-term supply agreement, we'd love to hear from you.</p>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📧</div>
+        <div class="contact-detail-text">
+          <span>Email</span>
+          <a href="mailto:kundan.mahajan@bananacks.com">kundan.mahajan@bananacks.com</a>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">🌍</div>
+        <div class="contact-detail-text">
+          <span>Website</span>
+          <a href="https://bananacks.com">bananacks.com</a>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📍</div>
+        <div class="contact-detail-text">
+          <span>Registered In</span>
+          <strong>India</strong>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">🚢</div>
+        <div class="contact-detail-text">
+          <span>Primary Export Port</span>
+          <strong>Nhava Sheva (JNPT), Mumbai</strong>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form fade-in">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Full name">
+        </div>
+        <div class="form-group">
+          <label>Company</label>
+          <input type="text" placeholder="Company name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Country</label>
+          <input type="text" placeholder="Russia, UAE, etc.">
+        </div>
+        <div class="form-group">
+          <label>Interested In</label>
+          <select>
+            <option>Grand Naine Cavendish</option>
+            <option>Robusta Banana</option>
+            <option>Nendran Banana</option>
+            <option>Multiple Varieties</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Estimated Volume (tonnes/month)</label>
+        <input type="text" placeholder="e.g. 22 tonnes / 1 container">
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea rows="4" placeholder="Tell us about your requirements — preferred trade terms (FOB/CIF), destination port, frequency, etc."></textarea>
+      </div>
+      <button class="btn-primary" style="width:100%; margin-top:8px; border:none; font-size:1rem">Send Enquiry →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Banana<span>cks Pvt Ltd</span></div>
+  <p>Premium Fresh Banana Exporters from India</p>
+  <p style="color: rgba(255,255,255,0.2); font-size:0.75rem">© 2026 Bananacks Pvt Ltd. All rights reserved.</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    en
