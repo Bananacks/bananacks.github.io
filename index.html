@@ -4,540 +4,167 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bananacks Pvt Ltd — Premium Fresh Banana Exporters from India</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --gold: #D4A017;
-    --deep-green: #1A3A2A;
-    --leaf: #2D6A4F;
-    --light-gold: #F5E6B8;
-    --cream: #FDFAF3;
-    --dark: #0F1F17;
-    --text: #2C3E2D;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--text);
-    overflow-x: hidden;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed; top: 0; width: 100%; z-index: 100;
-    background: rgba(15, 31, 23, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 18px 60px;
-    display: flex; justify-content: space-between; align-items: center;
-    border-bottom: 1px solid rgba(212, 160, 23, 0.2);
-  }
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    color: var(--gold);
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-  }
-  .nav-logo span { color: white; }
-  .nav-links { display: flex; gap: 36px; list-style: none; }
-  .nav-links a {
-    color: rgba(255,255,255,0.75);
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--gold); }
-  .nav-cta {
-    background: var(--gold);
-    color: var(--dark) !important;
-    padding: 10px 24px;
-    border-radius: 2px;
-    font-weight: 600 !important;
-  }
-  .nav-cta:hover { background: #c49012; color: var(--dark) !important; }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    background: var(--dark);
-    position: relative;
-    display: flex; align-items: center;
-    overflow: hidden;
-  }
-  .hero-bg {
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse 60% 80% at 70% 50%, rgba(45, 106, 79, 0.35) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(212, 160, 23, 0.12) 0%, transparent 60%),
-      linear-gradient(135deg, #0F1F17 0%, #1A3A2A 100%);
-  }
-  .hero-grid {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(212,160,23,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(212,160,23,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-  .hero-content {
-    position: relative; z-index: 2;
-    padding: 140px 60px 100px;
-    max-width: 700px;
-  }
-  .hero-tag {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(212, 160, 23, 0.15);
-    border: 1px solid rgba(212, 160, 23, 0.3);
-    color: var(--gold);
-    padding: 6px 16px;
-    border-radius: 100px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 28px;
-    animation: fadeUp 0.6s ease both;
-  }
-  .hero-tag::before { content: '●'; font-size: 0.5rem; }
-  h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
-    font-weight: 900;
-    color: white;
-    line-height: 1.1;
-    margin-bottom: 24px;
-    animation: fadeUp 0.6s 0.1s ease both;
-  }
-  h1 em { color: var(--gold); font-style: normal; }
-  .hero-sub {
-    font-size: 1.1rem;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.75;
-    max-width: 520px;
-    margin-bottom: 48px;
-    font-weight: 300;
-    animation: fadeUp 0.6s 0.2s ease both;
-  }
-  .hero-actions {
-    display: flex; gap: 16px; flex-wrap: wrap;
-    animation: fadeUp 0.6s 0.3s ease both;
-  }
-  .btn-primary {
-    background: var(--gold);
-    color: var(--dark);
-    padding: 16px 36px;
-    border: none;
-    border-radius: 2px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.2s;
-    letter-spacing: 0.3px;
-  }
-  .btn-primary:hover { background: #c49012; transform: translateY(-1px); }
-  .btn-secondary {
-    background: transparent;
-    color: white;
-    padding: 16px 36px;
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 2px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 500;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.2s;
-  }
-  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
-
-  .hero-stats {
-    position: absolute; bottom: 60px; right: 60px;
-    display: flex; gap: 48px;
-    animation: fadeUp 0.6s 0.4s ease both;
-  }
-  .stat { text-align: right; }
-  .stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--gold);
-    display: block;
-  }
-  .stat-label {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.45);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  /* MARQUEE */
-  .marquee-wrap {
-    background: var(--gold);
-    padding: 14px 0;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  .marquee-inner {
-    display: inline-block;
-    animation: marquee 25s linear infinite;
-  }
-  .marquee-inner span {
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--dark);
-    margin: 0 40px;
-  }
-  .marquee-inner span::before { content: '✦  '; }
-
-  /* SECTIONS */
-  section { padding: 100px 60px; }
-
-  .section-tag {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--leaf);
-    margin-bottom: 16px;
-    display: block;
-  }
-  h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 800;
-    color: var(--deep-green);
-    line-height: 1.2;
-    margin-bottom: 20px;
-  }
-  h2 em { color: var(--gold); font-style: normal; }
-
-  /* WHY US */
-  .why-us { background: white; }
-  .why-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .why-text p {
-    font-size: 1.05rem;
-    line-height: 1.85;
-    color: #4a5a4b;
-    margin-bottom: 20px;
-    font-weight: 300;
-  }
-  .why-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-  .why-card {
-    background: var(--cream);
-    border: 1px solid rgba(45, 106, 79, 0.1);
-    border-radius: 4px;
-    padding: 28px 24px;
-    transition: all 0.2s;
-  }
-  .why-card:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-  .why-card-icon {
-    font-size: 1.8rem;
-    margin-bottom: 12px;
-    display: block;
-  }
-  .why-card h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--deep-green);
-    margin-bottom: 6px;
-  }
-  .why-card p { font-size: 0.85rem; color: #7a8a7b; line-height: 1.6; }
-
-  /* PRODUCT */
-  .product { background: var(--deep-green); position: relative; overflow: hidden; }
-  .product::before {
-    content: '';
-    position: absolute; top: -100px; right: -100px;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(212,160,23,0.08), transparent 70%);
-    border-radius: 50%;
-  }
-  .product .section-tag { color: var(--gold); }
-  .product h2 { color: white; }
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    max-width: 1200px;
-    margin: 60px auto 0;
-  }
-  .product-card {
-    border: 1px solid rgba(212, 160, 23, 0.2);
-    border-radius: 4px;
-    padding: 40px 32px;
-    position: relative;
-    transition: all 0.3s;
-    background: rgba(255,255,255,0.03);
-  }
-  .product-card:hover {
-    border-color: var(--gold);
-    background: rgba(212, 160, 23, 0.05);
-    transform: translateY(-4px);
-  }
-  .product-card.featured {
-    border-color: var(--gold);
-    background: rgba(212, 160, 23, 0.08);
-  }
-  .featured-badge {
-    position: absolute; top: -12px; left: 32px;
-    background: var(--gold);
-    color: var(--dark);
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 4px 14px;
-    border-radius: 100px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .product-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    color: white;
-    margin-bottom: 12px;
-  }
-  .product-card p { font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 24px; }
-  .product-specs { list-style: none; }
-  .product-specs li {
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.6);
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    display: flex; justify-content: space-between;
-  }
-  .product-specs li:last-child { border: none; }
-  .product-specs li strong { color: var(--gold); }
-
-  /* MARKETS */
-  .markets { background: var(--cream); }
-  .markets-inner { max-width: 1200px; margin: 0 auto; }
-  .markets-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 60px;
-  }
-  .market-card {
-    border-radius: 4px;
-    padding: 40px 32px;
-    border: 1px solid rgba(45, 106, 79, 0.12);
-    transition: all 0.2s;
-    background: white;
-  }
-  .market-card:hover { box-shadow: 0 12px 36px rgba(0,0,0,0.08); transform: translateY(-3px); }
-  .market-flag { font-size: 2.5rem; margin-bottom: 16px; display: block; }
-  .market-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    color: var(--deep-green);
-    margin-bottom: 8px;
-  }
-  .market-status {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: 100px;
-    margin-bottom: 16px;
-  }
-  .status-active { background: rgba(45, 106, 79, 0.12); color: var(--leaf); }
-  .status-expanding { background: rgba(212, 160, 23, 0.12); color: #9a7010; }
-  .market-card p { font-size: 0.88rem; color: #6a7a6b; line-height: 1.7; }
-
-  /* PROCESS */
-  .process { background: white; }
-  .process-inner { max-width: 900px; margin: 60px auto 0; }
-  .process-step {
-    display: flex; gap: 32px; align-items: flex-start;
-    margin-bottom: 48px;
-    position: relative;
-  }
-  .process-step::after {
-    content: '';
-    position: absolute;
-    left: 23px; top: 52px;
-    width: 2px; height: calc(100% - 10px);
-    background: linear-gradient(to bottom, var(--leaf), transparent);
-  }
-  .process-step:last-child::after { display: none; }
-  .step-num {
-    width: 48px; height: 48px;
-    background: var(--deep-green);
-    color: var(--gold);
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    position: relative; z-index: 1;
-  }
-  .step-body h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    color: var(--deep-green);
-    margin-bottom: 8px;
-  }
-  .step-body p { font-size: 0.9rem; color: #6a7a6b; line-height: 1.7; }
-
-  /* CONTACT */
-  .contact { background: var(--dark); position: relative; overflow: hidden; }
-  .contact::before {
-    content: '';
-    position: absolute; bottom: -150px; left: -150px;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(45,106,79,0.2), transparent 70%);
-    border-radius: 50%;
-  }
-  .contact .section-tag { color: var(--gold); }
-  .contact h2 { color: white; }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
-    max-width: 1200px;
-    margin: 60px auto 0;
-  }
-  .contact-info p {
-    font-size: 1rem;
-    color: rgba(255,255,255,0.55);
-    line-height: 1.85;
-    font-weight: 300;
-    margin-bottom: 40px;
-  }
-  .contact-detail {
-    display: flex; align-items: center; gap: 16px;
-    margin-bottom: 20px;
-  }
-  .contact-detail-icon {
-    width: 40px; height: 40px;
-    background: rgba(212, 160, 23, 0.1);
-    border: 1px solid rgba(212, 160, 23, 0.2);
-    border-radius: 2px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1rem;
-    flex-shrink: 0;
-  }
-  .contact-detail-text span {
-    display: block;
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.35);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 2px;
-  }
-  .contact-detail-text a, .contact-detail-text strong {
-    color: white;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-  }
-  .contact-detail-text a:hover { color: var(--gold); }
-  .contact-form { display: flex; flex-direction: column; gap: 16px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .form-group { display: flex; flex-direction: column; gap: 6px; }
-  .form-group label {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.4);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .form-group input, .form-group select, .form-group textarea {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 2px;
-    padding: 14px 16px;
-    color: white;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    transition: border-color 0.2s;
-    outline: none;
-    resize: none;
-  }
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-    border-color: var(--gold);
-  }
-  .form-group select option { background: var(--dark); }
-
-  /* FOOTER */
-  footer {
-    background: #0a1510;
-    padding: 40px 60px;
-    display: flex; justify-content: space-between; align-items: center;
-    border-top: 1px solid rgba(212, 160, 23, 0.1);
-  }
-  .footer-logo {
-    font-family: 'Playfair Display', serif;
-    color: var(--gold);
-    font-size: 1.2rem;
-    font-weight: 700;
-  }
-  .footer-logo span { color: rgba(255,255,255,0.4); }
-  footer p { font-size: 0.8rem; color: rgba(255,255,255,0.25); }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 1; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
-  .fade-in {
-    opacity: 1;
-    
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-  @media (max-width: 768px) {
-    nav { padding: 16px 24px; }
-    .nav-links { display: none; }
-    section { padding: 70px 24px; }
-    .hero-content { padding: 120px 24px 80px; }
-    .hero-stats { display: none; }
-    .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-    .product-grid, .markets-grid { grid-template-columns: 1fr; }
-    .why-cards { grid-template-columns: 1fr; }
-    .form-row { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 12px; text-align: center; }
-  }
+:root { --yellow:#FFD600; --yellow-light:#FFF3B0; --green:#1B5E20; --green-mid:#2E7D32; --orange:#FF6F00; --cream:#FFFDE7; --dark:#1A1200; --text:#2D2000; }
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(26,18,0,0.96);backdrop-filter:blur(12px);padding:14px 60px;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-box{width:40px;height:40px;background:var(--yellow);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;transform:rotate(-8deg);box-shadow:0 4px 12px rgba(255,214,0,0.4);flex-shrink:0;}
+.logo-words{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:900;color:var(--yellow);letter-spacing:-0.5px;line-height:1;}
+.logo-words em{color:rgba(255,255,255,0.45);font-style:normal;}
+.logo-tag{font-size:0.55rem;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:2px;display:block;margin-top:1px;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.875rem;font-weight:600;transition:color 0.2s;}
+.nav-links a:hover{color:var(--yellow);}
+.nav-cta{background:var(--yellow)!important;color:var(--dark)!important;padding:9px 22px;border-radius:100px;}
+.hero{min-height:100vh;background:linear-gradient(160deg,#0a2e0a 0%,#1a4a00 40%,#2d6a00 70%,#1a3a00 100%);position:relative;overflow:hidden;display:flex;align-items:center;}
+.floaters{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+.floater{position:absolute;animation:floatUp linear infinite;}
+.floater:nth-child(1){left:5%;top:10%;animation-duration:18s;}
+.floater:nth-child(2){left:75%;top:5%;animation-duration:22s;animation-delay:-5s;}
+.floater:nth-child(3){left:45%;top:60%;animation-duration:16s;animation-delay:-8s;}
+.floater:nth-child(4){left:85%;top:40%;animation-duration:20s;animation-delay:-3s;}
+.floater:nth-child(5){left:20%;top:70%;animation-duration:24s;animation-delay:-12s;}
+@keyframes floatUp{0%,100%{transform:translateY(0) rotate(0deg);opacity:.12;}50%{transform:translateY(-40px) rotate(8deg);opacity:.22;}}
+.hero-inner{position:relative;z-index:10;padding:140px 60px 120px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1300px;width:100%;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,214,0,0.15);border:1px solid rgba(255,214,0,0.4);color:var(--yellow);padding:7px 18px;border-radius:100px;font-size:0.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:28px;}
+h1{font-family:'Fraunces',serif;font-size:clamp(2.8rem,4.5vw,5rem);font-weight:900;line-height:1.05;color:white;margin-bottom:24px;}
+h1 .acc{color:var(--yellow);font-style:italic;}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.65);line-height:1.8;max-width:460px;font-weight:300;margin-bottom:44px;}
+.hero-btns{display:flex;gap:14px;}
+.btn-y{background:var(--yellow);color:var(--dark);padding:15px 34px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.95rem;font-weight:700;text-decoration:none;display:inline-block;border:none;cursor:pointer;transition:all 0.2s;box-shadow:0 8px 24px rgba(255,214,0,0.35);}
+.btn-y:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(255,214,0,0.5);}
+.btn-ghost{background:transparent;color:white;padding:15px 34px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.95rem;font-weight:600;text-decoration:none;display:inline-block;border:1.5px solid rgba(255,255,255,0.3);transition:all 0.2s;}
+.btn-ghost:hover{border-color:var(--yellow);color:var(--yellow);}
+.hero-right{display:flex;justify-content:center;}
+.hero-svg{width:100%;max-width:500px;filter:drop-shadow(0 30px 60px rgba(0,0,0,0.5));}
+.hero-stats{position:absolute;bottom:40px;left:60px;right:60px;display:flex;}
+.hstat{flex:1;padding:20px 28px;border-left:1px solid rgba(255,255,255,0.08);}
+.hstat:first-child{border-left:none;padding-left:0;}
+.hstat-n{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;color:var(--yellow);display:block;}
+.hstat-l{font-size:0.72rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1.2px;}
+.ticker{background:var(--yellow);padding:13px 0;overflow:hidden;white-space:nowrap;}
+.ticker-inner{display:inline-block;animation:tick 30s linear infinite;}
+.ticker-inner span{font-size:0.78rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--dark);margin:0 36px;}
+.ticker-inner span::before{content:'🍌  ';}
+@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.about{background:white;padding:100px 60px;}
+.about-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.big-card{background:linear-gradient(135deg,#FFD600 0%,#FF8F00 100%);border-radius:24px;padding:44px;text-align:center;box-shadow:0 20px 60px rgba(255,143,0,0.3);position:relative;overflow:hidden;margin-bottom:16px;}
+.big-card::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:rgba(255,255,255,0.15);border-radius:50%;}
+.bob{animation:bob 3s ease-in-out infinite;display:block;margin:0 auto 20px;width:180px;}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-5deg);}50%{transform:translateY(-14px) rotate(5deg);}}
+.big-card h3{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:900;color:var(--dark);margin-bottom:6px;}
+.big-card p{font-size:.88rem;color:rgba(26,18,0,0.65);}
+.mini-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.mc{background:var(--cream);border-radius:16px;padding:20px;border:2px solid transparent;transition:all 0.2s;}
+.mc:hover{border-color:var(--yellow);transform:translateY(-2px);}
+.mc-icon{font-size:1.8rem;margin-bottom:8px;display:block;}
+.mc h4{font-size:.85rem;font-weight:700;color:var(--text);margin-bottom:4px;}
+.mc p{font-size:.75rem;color:#999;line-height:1.5;}
+.section-label{font-size:.72rem;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--green-mid);margin-bottom:16px;display:block;}
+h2{font-family:'Fraunces',serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:900;line-height:1.15;color:var(--text);margin-bottom:20px;}
+h2 .y{color:var(--orange);font-style:italic;}
+.about-text p{font-size:1rem;line-height:1.85;color:#666;font-weight:300;margin-bottom:18px;}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;}
+.badge{background:var(--yellow-light);border:1.5px solid var(--yellow);color:var(--dark);padding:7px 16px;border-radius:100px;font-size:.78rem;font-weight:700;}
+.products{background:linear-gradient(160deg,#1B5E20 0%,#2E7D32 50%,#1B5E20 100%);padding:100px 60px;position:relative;overflow:hidden;}
+.products::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 80%,rgba(255,214,0,.07) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(255,214,0,.05) 0%,transparent 50%);}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:60px auto 0;position:relative;z-index:1;}
+.prod-card{border-radius:24px;overflow:hidden;transition:all 0.3s;box-shadow:0 8px 32px rgba(0,0,0,0.2);}
+.prod-card:hover{transform:translateY(-8px);box-shadow:0 24px 64px rgba(0,0,0,0.35);}
+.prod-art{height:240px;position:relative;overflow:hidden;}
+.prod-art img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;}
+.prod-card:hover .prod-art img{transform:scale(1.06);}
+.best-badge{position:absolute;top:16px;right:16px;background:white;color:var(--orange);font-size:.68rem;font-weight:800;padding:5px 12px;border-radius:100px;z-index:2;}
+.prod-body{background:white;padding:28px;}
+.prod-body h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:var(--text);margin-bottom:8px;}
+.prod-body p{font-size:.85rem;color:#888;line-height:1.6;margin-bottom:20px;}
+.specs{border-top:1px solid #f0f0f0;padding-top:16px;}
+.spec{display:flex;justify-content:space-between;font-size:.8rem;padding:5px 0;border-bottom:1px dashed #f5f5f5;}
+.spec:last-child{border:none;}
+.spec span:first-child{color:#bbb;}
+.spec span:last-child{color:var(--text);font-weight:600;}
+.markets{padding:100px 60px;background:var(--cream);}
+.markets-inner{max-width:1200px;margin:0 auto;}
+.mkt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px;}
+.mkt-card{border-radius:24px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);transition:all 0.3s;}
+.mkt-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,0.15);}
+.mkt-art{height:200px;position:relative;overflow:hidden;}
+.mkt-art img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;}
+.mkt-card:hover .mkt-art img{transform:scale(1.06);}
+.mkt-overlay{position:absolute;inset:0;}
+.mkt-body{background:white;padding:28px;}
+.mkt-flag{font-size:2rem;margin-bottom:10px;display:block;}
+.mkt-body h3{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:8px;}
+.pill{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:14px;}
+.hot{background:#FFF3E0;color:#E65100;}
+.active{background:#E8F5E9;color:#2E7D32;}
+.emerging{background:#E3F2FD;color:#1565C0;}
+.mkt-body p{font-size:.85rem;color:#888;line-height:1.7;}
+.process{background:linear-gradient(135deg,#FFD600 0%,#FFC107 60%,#FF8F00 100%);padding:100px 60px;position:relative;overflow:hidden;}
+.process .section-label{color:rgba(26,18,0,.55);}
+.process h2{color:var(--dark);}
+.proc-sub{color:rgba(26,18,0,.55);margin-bottom:60px;}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;max-width:1200px;margin:0 auto;position:relative;z-index:1;}
+.steps::before{content:'';position:absolute;top:44px;left:10%;right:10%;height:2px;background:rgba(26,18,0,.12);}
+.step{text-align:center;position:relative;z-index:1;}
+.step-circle{width:88px;height:88px;background:white;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 8px 24px rgba(0,0,0,0.15);transition:all 0.2s;}
+.step:hover .step-circle{transform:scale(1.1);}
+.step h4{font-family:'Fraunces',serif;font-size:.95rem;font-weight:700;color:var(--dark);margin-bottom:6px;}
+.step p{font-size:.75rem;color:rgba(26,18,0,.6);line-height:1.5;}
+.contact{background:var(--dark);padding:100px 60px;position:relative;overflow:hidden;}
+.contact::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(255,214,0,.06),transparent 70%);border-radius:50%;}
+.contact-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;z-index:1;}
+.contact .section-label{color:var(--yellow);}
+.contact h2{color:white;margin-bottom:8px;}
+.contact-desc{color:rgba(255,255,255,.5);margin-bottom:40px;font-size:1rem;line-height:1.7;font-weight:300;}
+.cdet{display:flex;align-items:center;gap:16px;margin-bottom:20px;}
+.cicon{width:48px;height:48px;background:rgba(255,214,0,.1);border:1.5px solid rgba(255,214,0,.2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.ctxt span{font-size:.7rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:2px;}
+.ctxt strong{color:white;font-size:.95rem;font-weight:500;}
+.form-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:40px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.fg{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+.fg label{font-size:.72rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:1px;}
+.fg input,.fg select,.fg textarea{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:12px;padding:13px 16px;color:white;font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;outline:none;transition:border-color 0.2s;resize:none;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--yellow);}
+.fg select option{background:#1a1200;}
+.submit-btn{width:100%;background:var(--yellow);color:var(--dark);border:none;border-radius:100px;padding:16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;transition:all 0.2s;box-shadow:0 8px 24px rgba(255,214,0,.3);margin-top:8px;}
+.submit-btn:hover{transform:translateY(-2px);}
+footer{background:#0d0900;padding:32px 60px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,214,0,.08);}
+.flogo{display:flex;align-items:center;gap:8px;}
+.flogo-box{width:28px;height:28px;background:var(--yellow);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.9rem;transform:rotate(-8deg);}
+.flogo-text{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:900;color:var(--yellow);}
+.flogo-text span{color:rgba(255,255,255,.3);}
+footer p{font-size:.78rem;color:rgba(255,255,255,.2);}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@media(max-width:900px){
+  nav{padding:14px 24px;} .nav-links{display:none;}
+  .hero-inner{grid-template-columns:1fr;padding:120px 24px 100px;}
+  .hero-right,.hero-stats{display:none;}
+  .about,.products,.markets,.process,.contact{padding:70px 24px;}
+  .about-inner,.contact-inner{grid-template-columns:1fr;gap:48px;}
+  .prod-grid,.mkt-grid{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr 1fr;} .steps::before{display:none;}
+  .form-row{grid-template-columns:1fr;}
+  footer{flex-direction:column;gap:10px;text-align:center;}
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="nav-logo">Banana<span>cks</span></div>
+  <a class="nav-logo" href="#">
+    <div class="logo-box">🍌</div>
+    <div>
+      <div class="logo-words">Banana<em>cks</em></div>
+      <span class="logo-tag">Fresh Banana Exporters · India</span>
+    </div>
+  </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#products">Products</a></li>
@@ -547,284 +174,280 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-content">
-    <div class="hero-tag">India's Finest Banana Exporters</div>
-    <h1>Premium Fresh<br>Bananas, Direct<br>from <em>India</em></h1>
-    <p class="hero-sub">Bananacks sources Grade A Cavendish bananas from India's finest growing belts and delivers them reliably to global markets — with full cold chain integrity from farm to port.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Request a Quote</a>
-      <a href="#products" class="btn-secondary">View Products</a>
+  <div class="floaters">
+    <div class="floater"><svg width="80" viewBox="0 0 100 60" fill="none"><path d="M10 50 Q30 5 90 15" stroke="#FFD600" stroke-width="14" stroke-linecap="round" fill="none"/></svg></div>
+    <div class="floater"><svg width="120" viewBox="0 0 100 60" fill="none"><path d="M10 50 Q30 5 90 15" stroke="#FFA000" stroke-width="14" stroke-linecap="round" fill="none"/></svg></div>
+    <div class="floater"><svg width="60" viewBox="0 0 100 60" fill="none"><path d="M10 50 Q30 5 90 15" stroke="#FFEE58" stroke-width="14" stroke-linecap="round" fill="none"/></svg></div>
+    <div class="floater"><svg width="100" viewBox="0 0 100 60" fill="none"><path d="M10 50 Q30 5 90 15" stroke="#FFC107" stroke-width="14" stroke-linecap="round" fill="none"/></svg></div>
+    <div class="floater"><svg width="90" viewBox="0 0 100 60" fill="none"><path d="M10 50 Q30 5 90 15" stroke="#FFD600" stroke-width="14" stroke-linecap="round" fill="none"/></svg></div>
+  </div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">🇮🇳 India's Premium Banana Exporters</div>
+      <h1>The World's Favourite<br>Fruit, from <span class="acc">India's Heart</span></h1>
+      <p class="hero-sub">Bananacks delivers Grade A Cavendish bananas from Maharashtra's finest farms to buyers in Russia, the Middle East, and Europe — fresh, certified, and on time.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-y">Request a Quote →</a>
+        <a href="#products" class="btn-ghost">Our Products</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <svg class="hero-svg" viewBox="0 0 500 460" fill="none">
+        <circle cx="250" cy="230" r="190" fill="rgba(255,214,0,0.07)"/>
+        <circle cx="250" cy="230" r="150" fill="rgba(255,214,0,0.05)"/>
+        <ellipse cx="195" cy="95" rx="85" ry="28" fill="#2E7D32" transform="rotate(-30 195 95)"/>
+        <ellipse cx="305" cy="85" rx="90" ry="26" fill="#388E3C" transform="rotate(22 305 85)"/>
+        <ellipse cx="250" cy="75" rx="72" ry="24" fill="#1B5E20" transform="rotate(-5 250 75)"/>
+        <line x1="195" y1="95" x2="130" y2="55" stroke="#1B5E20" stroke-width="2.5"/>
+        <line x1="305" y1="85" x2="375" y2="50" stroke="#2E7D32" stroke-width="2.5"/>
+        <path d="M250 115 Q248 155 244 195" stroke="#5D4037" stroke-width="13" stroke-linecap="round" fill="none"/>
+        <path d="M198 198 Q168 168 157 198 Q152 228 188 238 Q208 243 212 223 Q216 203 198 198Z" fill="#FFD600" stroke="#F9A825" stroke-width="2"/>
+        <path d="M228 193 Q198 163 187 193 Q182 223 218 233 Q238 238 242 218 Q246 198 228 193Z" fill="#FFEE58" stroke="#F9A825" stroke-width="2"/>
+        <path d="M258 190 Q228 160 217 190 Q212 220 248 230 Q268 235 272 215 Q276 195 258 190Z" fill="#FFD600" stroke="#F9A825" stroke-width="2"/>
+        <path d="M288 193 Q258 163 247 193 Q242 223 278 233 Q298 238 302 218 Q306 198 288 193Z" fill="#FFC107" stroke="#F9A825" stroke-width="2"/>
+        <path d="M316 198 Q286 168 275 198 Q270 228 306 238 Q326 243 329 223 Q332 203 316 198Z" fill="#FFD600" stroke="#F9A825" stroke-width="2"/>
+        <path d="M183 243 Q153 213 142 243 Q137 273 173 283 Q193 288 196 268 Q199 248 183 243Z" fill="#FFC107" stroke="#F9A825" stroke-width="2"/>
+        <path d="M213 238 Q183 208 172 238 Q167 268 203 278 Q223 283 226 263 Q229 243 213 238Z" fill="#FFD600" stroke="#F9A825" stroke-width="2"/>
+        <path d="M243 235 Q213 205 202 235 Q197 265 233 275 Q253 280 256 260 Q259 240 243 235Z" fill="#FFEE58" stroke="#F9A825" stroke-width="2"/>
+        <path d="M273 238 Q243 208 232 238 Q227 268 263 278 Q283 283 286 263 Q289 243 273 238Z" fill="#FFD600" stroke="#F9A825" stroke-width="2"/>
+        <path d="M303 243 Q273 213 262 243 Q257 273 293 283 Q313 288 316 268 Q319 248 303 243Z" fill="#FFC107" stroke="#F9A825" stroke-width="2"/>
+        <path d="M330 250 Q300 220 289 250 Q284 280 320 290 Q340 295 342 275 Q344 255 330 250Z" fill="#FFD600" stroke="#F9A825" stroke-width="2"/>
+        <path d="M198 288 Q168 258 157 288 Q152 318 188 328 Q208 333 211 313 Q214 293 198 288Z" fill="#FFD600" stroke="#F9A825" stroke-width="2"/>
+        <path d="M226 283 Q196 253 185 283 Q180 313 216 323 Q236 328 239 308 Q242 288 226 283Z" fill="#FFEE58" stroke="#F9A825" stroke-width="2"/>
+        <path d="M254 280 Q224 250 213 280 Q208 310 244 320 Q264 325 267 305 Q270 285 254 280Z" fill="#FFC107" stroke="#F9A825" stroke-width="2"/>
+        <path d="M282 283 Q252 253 241 283 Q236 313 272 323 Q292 328 295 308 Q298 288 282 283Z" fill="#FFD600" stroke="#F9A825" stroke-width="2"/>
+        <path d="M310 288 Q280 258 269 288 Q264 318 300 328 Q320 333 322 313 Q324 293 310 288Z" fill="#FFEE58" stroke="#F9A825" stroke-width="2"/>
+        <circle cx="138" cy="175" r="5" fill="#FFD600" opacity="0.6"/>
+        <circle cx="368" cy="155" r="4" fill="#FFEE58" opacity="0.5"/>
+        <text x="90" y="390" font-family="Georgia,serif" font-size="16" fill="rgba(255,214,0,0.35)" font-style="italic">100% Natural</text>
+        <text x="280" y="410" font-family="Georgia,serif" font-size="13" fill="rgba(255,214,0,0.25)" font-style="italic">Grade A Export</text>
+      </svg>
     </div>
   </div>
   <div class="hero-stats">
-    <div class="stat">
-      <span class="stat-num">Grade A</span>
-      <span class="stat-label">Export Quality</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">$500<small style="font-size:1rem">/T</small></span>
-      <span class="stat-label">Starting FOB Price</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">3+</span>
-      <span class="stat-label">Export Markets</span>
-    </div>
+    <div class="hstat"><span class="hstat-n">Grade A</span><span class="hstat-l">Export Quality</span></div>
+    <div class="hstat"><span class="hstat-n">Year Round</span><span class="hstat-l">Availability</span></div>
+    <div class="hstat"><span class="hstat-n">3+</span><span class="hstat-l">Export Markets</span></div>
+    <div class="hstat"><span class="hstat-n">APEDA</span><span class="hstat-l">Registered (In Process)</span></div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee-wrap">
-  <div class="marquee-inner">
-    <span>Fresh Cavendish Bananas</span>
-    <span>Grand Naine Variety</span>
-    <span>Jalgaon, Maharashtra Origin</span>
-    <span>APEDA Registered</span>
-    <span>Cold Chain Certified</span>
-    <span>Russia & Middle East Markets</span>
-    <span>FOB & CIF Available</span>
-    <span>Fresh Cavendish Bananas</span>
-    <span>Grand Naine Variety</span>
-    <span>Jalgaon, Maharashtra Origin</span>
-    <span>APEDA Registered</span>
-    <span>Cold Chain Certified</span>
-    <span>Russia & Middle East Markets</span>
-    <span>FOB & CIF Available</span>
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Fresh Cavendish Bananas</span><span>Grand Naine Variety</span><span>Jalgaon Maharashtra</span><span>APEDA Registered</span><span>Russia Export Ready</span><span>FOB & CIF Available</span><span>Cold Chain Certified</span><span>Year-Round Supply</span>
+    <span>Fresh Cavendish Bananas</span><span>Grand Naine Variety</span><span>Jalgaon Maharashtra</span><span>APEDA Registered</span><span>Russia Export Ready</span><span>FOB & CIF Available</span><span>Cold Chain Certified</span><span>Year-Round Supply</span>
   </div>
 </div>
 
-<!-- ABOUT / WHY US -->
-<section class="why-us" id="about">
-  <div class="why-grid">
-    <div class="why-text fade-in">
-      <span class="section-tag">About Bananacks</span>
-      <h2>Built for the<br><em>Global Market</em></h2>
-      <p>Bananacks Pvt Ltd is an Indian export company specialising in premium fresh bananas for international buyers. We source exclusively from the finest growing belts in Maharashtra and South India, ensuring consistent quality, sizing, and shelf life across every shipment.</p>
-      <p>Our focus is on building long-term relationships with importers in Russia, the Middle East, and the European Union — backed by reliable logistics, phytosanitary compliance, and competitive pricing.</p>
-      <a href="#contact" class="btn-primary" style="margin-top: 16px; display: inline-block;">Start a Conversation</a>
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="reveal">
+      <div class="big-card">
+        <svg class="bob" viewBox="0 0 200 180" fill="none">
+          <rect x="75" y="142" width="50" height="34" rx="6" fill="#795548"/>
+          <rect x="70" y="136" width="60" height="12" rx="4" fill="#8D6E63"/>
+          <ellipse cx="100" cy="143" rx="28" ry="6" fill="#5D4037"/>
+          <rect x="96" y="62" width="8" height="83" rx="4" fill="#558B2F"/>
+          <ellipse cx="68" cy="82" rx="57" ry="20" fill="#4CAF50" transform="rotate(-20 68 82)"/>
+          <ellipse cx="132" cy="72" rx="57" ry="20" fill="#66BB6A" transform="rotate(20 132 72)"/>
+          <ellipse cx="100" cy="57" rx="46" ry="18" fill="#81C784" transform="rotate(-5 100 57)"/>
+          <path d="M100 112 Q80 102 75 117 Q72 132 88 137 Q100 140 103 127 Q106 114 100 112Z" fill="#FFD600" stroke="#F9A825" stroke-width="1.5"/>
+          <path d="M106 110 Q86 100 81 115 Q78 130 94 135 Q106 138 109 125 Q112 112 106 110Z" fill="#FFEE58" stroke="#F9A825" stroke-width="1.5"/>
+          <path d="M112 112 Q92 102 87 117 Q84 132 100 137 Q112 140 115 127 Q118 114 112 112Z" fill="#FFC107" stroke="#F9A825" stroke-width="1.5"/>
+          <path d="M118 116 Q98 106 93 121 Q90 136 106 141 Q118 144 121 131 Q124 118 118 116Z" fill="#FFD600" stroke="#F9A825" stroke-width="1.5"/>
+          <circle cx="38" cy="38" r="3" fill="#FFD600"/><circle cx="165" cy="28" r="2" fill="#FFEE58"/>
+        </svg>
+        <h3>Farm to World 🌍</h3>
+        <p>Direct from India's banana heartland to your port</p>
+      </div>
+      <div class="mini-cards">
+        <div class="mc"><span class="mc-icon">🌿</span><h4>Premium Source</h4><p>Jalgaon, Maharashtra — India's banana capital</p></div>
+        <div class="mc"><span class="mc-icon">❄️</span><h4>Cold Chain</h4><p>13°C reefer, APEDA protocol compliant</p></div>
+        <div class="mc"><span class="mc-icon">📋</span><h4>Certified</h4><p>Phytosanitary, COO, IEC ready</p></div>
+        <div class="mc"><span class="mc-icon">🚢</span><h4>FOB & CIF</h4><p>Flexible terms for all buyers</p></div>
+      </div>
     </div>
-    <div class="why-cards fade-in">
-      <div class="why-card">
-        <span class="why-card-icon">🌿</span>
-        <h4>Premium Sourcing</h4>
-        <p>Grand Naine Cavendish from Jalgaon & Andhra — India's export belt.</p>
+    <div class="about-text reveal">
+      <span class="section-label">About Bananacks</span>
+      <h2>Built to Take India's<br>Best to the <span class="y">World</span></h2>
+      <p>Bananacks Pvt Ltd is a fresh banana export company from India, specialising in premium Grade A Cavendish bananas for international importers and distributors.</p>
+      <p>We source exclusively from Jalgaon, Maharashtra — India's largest banana producing district — ensuring consistent quality, sizing, and shelf life across every shipment.</p>
+      <div class="badges">
+        <span class="badge">🇮🇳 Made in India</span>
+        <span class="badge">✅ APEDA Registered</span>
+        <span class="badge">🚢 Sea Freight Ready</span>
+        <span class="badge">📦 22T Min Order</span>
+        <span class="badge">🌡️ Cold Chain Certified</span>
       </div>
-      <div class="why-card">
-        <span class="why-card-icon">❄️</span>
-        <h4>Cold Chain Ready</h4>
-        <p>Pre-cooling, reefer containers & APEDA sea protocol compliance.</p>
+      <a href="#contact" class="btn-y" style="margin-top:32px;display:inline-block">Start a Conversation →</a>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div style="text-align:center;position:relative;z-index:1">
+    <span class="section-label" style="color:rgba(255,255,200,0.7)">What We Grow & Export</span>
+    <h2 style="color:white">Our <span style="color:#FFD600;font-style:italic">Products</span></h2>
+    <p style="color:rgba(255,255,255,0.55);font-size:1rem">Three world-class varieties from certified Indian farms</p>
+  </div>
+  <div class="prod-grid">
+    <div class="prod-card reveal">
+      <div class="prod-art">
+        <div class="best-badge">⭐ Best Seller</div>
+        <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?w=600&q=80" alt="Grand Naine Cavendish Bananas">
       </div>
-      <div class="why-card">
-        <span class="why-card-icon">📋</span>
-        <h4>Full Compliance</h4>
-        <p>Phytosanitary, Certificate of Origin, IEC, APEDA registered.</p>
+      <div class="prod-body">
+        <h3>Grand Naine Cavendish</h3>
+        <p>India's premium export banana. 18–22 day shelf life, most preferred by Russian & Middle Eastern buyers.</p>
+        <div class="specs">
+          <div class="spec"><span>Variety</span><span>Grand Naine</span></div>
+          <div class="spec"><span>Weight/finger</span><span>120–200g</span></div>
+          <div class="spec"><span>Shelf Life</span><span>18–22 days</span></div>
+          <div class="spec"><span>Packing</span><span>13–14 kg/carton</span></div>
+          <div class="spec"><span>Origin</span><span>Jalgaon, Maharashtra</span></div>
+        </div>
       </div>
-      <div class="why-card">
-        <span class="why-card-icon">🚢</span>
-        <h4>FOB & CIF Pricing</h4>
-        <p>Flexible trade terms tailored to your import requirements.</p>
+    </div>
+    <div class="prod-card reveal">
+      <div class="prod-art">
+        <img src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24?w=600&q=80" alt="Robusta Bananas">
+      </div>
+      <div class="prod-body">
+        <h3>Robusta Banana</h3>
+        <p>Hardy variety with rich flavour, ideal for longer transit routes and cost-effective supply.</p>
+        <div class="specs">
+          <div class="spec"><span>Variety</span><span>Robusta</span></div>
+          <div class="spec"><span>Weight/finger</span><span>100–180g</span></div>
+          <div class="spec"><span>Shelf Life</span><span>14–18 days</span></div>
+          <div class="spec"><span>Packing</span><span>13 kg/carton</span></div>
+          <div class="spec"><span>Origin</span><span>Andhra Pradesh</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card reveal">
+      <div class="prod-art">
+        <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=600&q=80" alt="Nendran Bananas">
+      </div>
+      <div class="prod-body">
+        <h3>Nendran Banana</h3>
+        <p>Uniquely Indian with thick peel and distinct flavour. Growing demand in UAE, UK, and EU specialty markets.</p>
+        <div class="specs">
+          <div class="spec"><span>Variety</span><span>Nendran</span></div>
+          <div class="spec"><span>Weight/finger</span><span>200–300g</span></div>
+          <div class="spec"><span>Shelf Life</span><span>12–15 days</span></div>
+          <div class="spec"><span>Packing</span><span>12 kg/carton</span></div>
+          <div class="spec"><span>Origin</span><span>Kerala / Tamil Nadu</span></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRODUCTS -->
-<section class="product" id="products">
-  <span class="section-tag" style="text-align:center; display:block">What We Export</span>
-  <h2 style="text-align:center; color:white">Our <em>Products</em></h2>
-  <div class="product-grid">
-    <div class="product-card featured fade-in">
-      <div class="featured-badge">Best Seller</div>
-      <h3>Grand Naine Cavendish</h3>
-      <p>India's premium export banana. Consistent size, excellent shelf life of 18–22 days, and the variety most preferred by Russian and Middle Eastern importers.</p>
-      <ul class="product-specs">
-        <li>Variety <strong>Grand Naine (Cavendish)</strong></li>
-        <li>Weight per finger <strong>120–200g</strong></li>
-        <li>Shelf Life <strong>18–22 days</strong></li>
-        <li>Packing <strong>13–14 kg/carton</strong></li>
-        <li>Colour at despatch <strong>Green Stage 1–2</strong></li>
-        <li>Origin <strong>Jalgaon, Maharashtra</strong></li>
-      </ul>
-    </div>
-    <div class="product-card fade-in">
-      <h3>Robusta Banana</h3>
-      <p>Hardy variety with a rich flavour profile, suited to longer transit routes. Ideal for buyers seeking a cost-effective alternative to Cavendish.</p>
-      <ul class="product-specs">
-        <li>Variety <strong>Robusta</strong></li>
-        <li>Weight per finger <strong>100–180g</strong></li>
-        <li>Shelf Life <strong>14–18 days</strong></li>
-        <li>Packing <strong>13 kg/carton</strong></li>
-        <li>Origin <strong>Andhra Pradesh / Tamil Nadu</strong></li>
-      </ul>
-    </div>
-    <div class="product-card fade-in">
-      <h3>Nendran Banana</h3>
-      <p>A uniquely Indian variety with a distinct taste and thick peel. Growing demand in specialty markets in the UAE, UK, and EU diaspora communities.</p>
-      <ul class="product-specs">
-        <li>Variety <strong>Nendran (Kerala)</strong></li>
-        <li>Weight per finger <strong>200–300g</strong></li>
-        <li>Shelf Life <strong>12–15 days</strong></li>
-        <li>Packing <strong>12 kg/carton</strong></li>
-        <li>Origin <strong>Kerala / Tamil Nadu</strong></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- MARKETS -->
 <section class="markets" id="markets">
   <div class="markets-inner">
-    <span class="section-tag fade-in">Where We Sell</span>
-    <h2 class="fade-in">Our Export <em>Markets</em></h2>
-    <div class="markets-grid">
-      <div class="market-card fade-in">
-        <span class="market-flag">🇷🇺</span>
-        <h3>Russia</h3>
-        <span class="market-status status-expanding">Actively Expanding</span>
-        <p>Russia imports over $779 million in bananas annually. With Ecuador's supply disrupted by geopolitical tensions, Indian exporters have a direct and growing opportunity. We target buyers in Moscow and St. Petersburg via sea freight through Vladivostok and St. Petersburg ports.</p>
+    <span class="section-label reveal">Where We Export</span>
+    <h2 class="reveal">Our Global <span class="y">Markets</span></h2>
+    <div class="mkt-grid">
+      <div class="mkt-card reveal">
+        <div class="mkt-art">
+          <img src="https://images.unsplash.com/photo-1513326738677-b964603b136d?w=600&q=80" alt="Moscow Russia">
+          <div class="mkt-overlay" style="background:linear-gradient(to bottom,rgba(13,71,161,0.2),rgba(13,71,161,0.55))"></div>
+        </div>
+        <div class="mkt-body">
+          <span class="mkt-flag">🇷🇺</span>
+          <h3>Russia</h3>
+          <span class="pill hot">🔥 Primary Target</span>
+          <p>A high-demand market with strong appetite for fresh Indian bananas. Direct sea routes via Vladivostok and St. Petersburg with year-round supply capacity.</p>
+        </div>
       </div>
-      <div class="market-card fade-in">
-        <span class="market-flag">🇦🇪</span>
-        <h3>Middle East</h3>
-        <span class="market-status status-active">Active Market</span>
-        <p>The UAE, Iraq, and Saudi Arabia collectively represent over 55% of India's banana export destinations. We have established trade routes and buyer relationships in this corridor, with shipments through Nhava Sheva port.</p>
+      <div class="mkt-card reveal">
+        <div class="mkt-art">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="Dubai UAE">
+          <div class="mkt-overlay" style="background:linear-gradient(to bottom,rgba(230,81,0,0.15),rgba(230,81,0,0.5))"></div>
+        </div>
+        <div class="mkt-body">
+          <span class="mkt-flag">🇦🇪</span>
+          <h3>Middle East</h3>
+          <span class="pill active">✅ Active Market</span>
+          <p>One of India's most well-established banana export corridors. Consistent year-round demand across the UAE, Oman, Iraq, and Saudi Arabia.</p>
+        </div>
       </div>
-      <div class="market-card fade-in">
-        <span class="market-flag">🇪🇺</span>
-        <h3>European Union</h3>
-        <span class="market-status status-expanding">Opportunity Market</span>
-        <p>EU banana production is forecast to decline significantly in 2025, pushing wholesale prices up. With India-EU FTA negotiations in advanced stages, we are building relationships with importers in the Netherlands — Europe's banana gateway.</p>
+      <div class="mkt-card reveal">
+        <div class="mkt-art">
+          <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&q=80" alt="Europe">
+          <div class="mkt-overlay" style="background:linear-gradient(to bottom,rgba(27,94,32,0.15),rgba(2,136,209,0.5))"></div>
+        </div>
+        <div class="mkt-body">
+          <span class="mkt-flag">🇪🇺</span>
+          <h3>European Union</h3>
+          <span class="pill emerging">🌱 Emerging</span>
+          <p>A premium destination with rising demand and growing supply gaps. Building importer relationships starting with the Netherlands — Europe's banana gateway.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
 <section class="process" id="process">
-  <span class="section-tag fade-in">How We Work</span>
-  <h2 class="fade-in">Farm to <em>Your Port</em></h2>
-  <div class="process-inner">
-    <div class="process-step fade-in">
-      <div class="step-num">01</div>
-      <div class="step-body">
-        <h4>Sourcing & Grading</h4>
-        <p>We source directly from certified farmer clusters in Jalgaon (Maharashtra) and Andhra Pradesh. Every batch is graded for size, weight, and colour to ensure only Grade A produce makes the cut.</p>
-      </div>
-    </div>
-    <div class="process-step fade-in">
-      <div class="step-num">02</div>
-      <div class="step-body">
-        <h4>Pack House & Pre-Cooling</h4>
-        <p>Bananas are de-handed, washed, treated, and packed in 13–14 kg export cartons at APEDA-approved pack houses. Pre-cooling to 13°C ensures fruit integrity throughout transit.</p>
-      </div>
-    </div>
-    <div class="process-step fade-in">
-      <div class="step-num">03</div>
-      <div class="step-body">
-        <h4>Documentation & Compliance</h4>
-        <p>We handle all export documentation including Phytosanitary Certificate, Certificate of Origin, Packing List, Commercial Invoice, and Bill of Lading. Full compliance with destination country import regulations.</p>
-      </div>
-    </div>
-    <div class="process-step fade-in">
-      <div class="step-num">04</div>
-      <div class="step-body">
-        <h4>Reefer Container Shipping</h4>
-        <p>Cargo is loaded into 40-foot reefer containers maintained at 13°C with controlled ethylene levels throughout the voyage. We follow APEDA's sea protocol for Russia shipments (18–25 day transit).</p>
-      </div>
-    </div>
-    <div class="process-step fade-in">
-      <div class="step-num">05</div>
-      <div class="step-body">
-        <h4>Delivery & After-Care</h4>
-        <p>We provide full shipment tracking and share all documents digitally. We remain available for any post-delivery queries and work towards long-term repeat contracts with all buyers.</p>
-      </div>
+  <div style="text-align:center;position:relative;z-index:1;max-width:1200px;margin:0 auto">
+    <span class="section-label">How We Work</span>
+    <h2>From <span style="font-style:italic">India's Farms</span> to Your Port</h2>
+    <p class="proc-sub">A seamless 5-step process ensuring quality at every stage</p>
+    <div class="steps">
+      <div class="step reveal"><div class="step-circle">🌱</div><h4>Farm Sourcing</h4><p>Grade A Cavendish from certified clusters in Jalgaon & Andhra Pradesh</p></div>
+      <div class="step reveal"><div class="step-circle">📦</div><h4>Pack House</h4><p>APEDA-approved — de-handed, washed, packed in 13–14 kg export cartons</p></div>
+      <div class="step reveal"><div class="step-circle">❄️</div><h4>Pre-Cooling</h4><p>Cooled to 13°C for full cold chain integrity throughout the voyage</p></div>
+      <div class="step reveal"><div class="step-circle">📋</div><h4>Documentation</h4><p>Phytosanitary, COO, Invoice & Bill of Lading — all handled</p></div>
+      <div class="step reveal"><div class="step-circle">🚢</div><h4>Delivery</h4><p>40ft reefer container shipped to Russia, Middle East, or EU with full tracking</p></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
-  <span class="section-tag" style="display:block">Get In Touch</span>
-  <h2>Request a <em>Quote</em></h2>
-  <div class="contact-grid">
-    <div class="contact-info fade-in">
-      <p>We welcome enquiries from importers, distributors, and wholesalers worldwide. Whether you're looking for a trial shipment or a long-term supply agreement, we'd love to hear from you.</p>
-      <div class="contact-detail">
-        <div class="contact-detail-icon">📧</div>
-        <div class="contact-detail-text">
-          <span>Email</span>
-          <a href="/cdn-cgi/l/email-protection#204b554e44414e0e4d4148414a414e6042414e414e41434b530e434f4d"><span class="__cf_email__" data-cfemail="0e657b606a6f6020636f666f646f604e6c6f606f606f6d657d206d6163">[email&#160;protected]</span></a>
-        </div>
-      </div>
-      <div class="contact-detail">
-        <div class="contact-detail-icon">🌍</div>
-        <div class="contact-detail-text">
-          <span>Website</span>
-          <a href="https://bananacks.com">bananacks.com</a>
-        </div>
-      </div>
-      <div class="contact-detail">
-        <div class="contact-detail-icon">📍</div>
-        <div class="contact-detail-text">
-          <span>Registered In</span>
-          <strong>India</strong>
-        </div>
-      </div>
-      <div class="contact-detail">
-        <div class="contact-detail-icon">🚢</div>
-        <div class="contact-detail-text">
-          <span>Primary Export Port</span>
-          <strong>Nhava Sheva (JNPT), Mumbai</strong>
-        </div>
-      </div>
+  <div class="contact-inner">
+    <div>
+      <span class="section-label">Get In Touch</span>
+      <h2>Request a <span style="color:#FFD600;font-style:italic">Quote</span></h2>
+      <p class="contact-desc">We welcome enquiries from importers, distributors, and wholesalers worldwide. Whether you need a trial shipment or a long-term supply arrangement, we'd love to connect.</p>
+      <div class="cdet"><div class="cicon">📧</div><div class="ctxt"><span>Email</span><strong>kundan.mahajan@bananacks.com</strong></div></div>
+      <div class="cdet"><div class="cicon">🌐</div><div class="ctxt"><span>Website</span><strong>www.bananacks.com</strong></div></div>
+      <div class="cdet"><div class="cicon">📍</div><div class="ctxt"><span>Country</span><strong>India 🇮🇳</strong></div></div>
+      <div class="cdet"><div class="cicon">🚢</div><div class="ctxt"><span>Export Port</span><strong>Nhava Sheva (JNPT), Mumbai</strong></div></div>
     </div>
-    <div class="contact-form fade-in">
+    <div class="form-box reveal">
       <div class="form-row">
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" placeholder="Full name">
-        </div>
-        <div class="form-group">
-          <label>Company</label>
-          <input type="text" placeholder="Company name">
-        </div>
+        <div class="fg"><label>Your Name</label><input type="text" placeholder="Full name"></div>
+        <div class="fg"><label>Company</label><input type="text" placeholder="Company name"></div>
       </div>
       <div class="form-row">
-        <div class="form-group">
-          <label>Country</label>
-          <input type="text" placeholder="Russia, UAE, etc.">
-        </div>
-        <div class="form-group">
-          <label>Interested In</label>
-          <select>
-            <option>Grand Naine Cavendish</option>
-            <option>Robusta Banana</option>
-            <option>Nendran Banana</option>
-            <option>Multiple Varieties</option>
-          </select>
+        <div class="fg"><label>Country</label><input type="text" placeholder="Russia, UAE, etc."></div>
+        <div class="fg"><label>Product Interest</label>
+          <select><option>Grand Naine Cavendish</option><option>Robusta Banana</option><option>Nendran Banana</option><option>Multiple Varieties</option></select>
         </div>
       </div>
-      <div class="form-group">
-        <label>Estimated Volume (tonnes/month)</label>
-        <input type="text" placeholder="e.g. 22 tonnes / 1 container">
+      <div class="fg"><label>Volume (tonnes/month)</label><input type="text" placeholder="e.g. 22 tonnes / 1 container"></div>
+      <div class="fg"><label>Trade Terms</label>
+        <select><option>FOB</option><option>CIF</option><option>Not sure yet</option></select>
       </div>
-      <div class="form-group">
-        <label>Message</label>
-        <textarea rows="4" placeholder="Tell us about your requirements — preferred trade terms (FOB/CIF), destination port, frequency, etc."></textarea>
-      </div>
-      <button class="btn-primary" style="width:100%; margin-top:8px; border:none; font-size:1rem">Send Enquiry →</button>
+      <div class="fg"><label>Message</label><textarea rows="3" placeholder="Tell us about your requirements..."></textarea></div>
+      <button class="submit-btn">🍌 Send Enquiry to Bananacks</button>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Banana<span>cks Pvt Ltd</span></div>
-  <p>Premium Fresh Banana Exporters from India</p>
-  <p style="color: rgba(255,255,255,0.2); font-size:0.75rem">© 2026 Bananacks Pvt Ltd. All rights reserved.</p>
+  <div class="flogo">
+    <div class="flogo-box">🍌</div>
+    <div class="flogo-text">Banana<span>cks Pvt Ltd</span></div>
+  </div>
+  <p>Premium Fresh Banana Exporters from India 🇮🇳</p>
+  <p style="font-size:.72rem;color:rgba(255,255,255,0.12)">© 2026 Bananacks Pvt Ltd. All rights reserved.</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5
+<script>
+const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
